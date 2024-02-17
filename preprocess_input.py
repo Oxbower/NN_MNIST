@@ -1,13 +1,11 @@
-# process dataset for use with nn
+"""
+    Attributions:
+    MNIST data loader from https://www.kaggle.com/code/hojjatk/read-mnist-dataset/notebook
+"""
 import numpy as np  # linear algebra
 import struct
 from array import array
 from os.path import join
-
-'''
-    Attributions:
-    MNIST data loader from https://www.kaggle.com/code/hojjatk/read-mnist-dataset/notebook
-'''
 
 
 #
@@ -49,6 +47,7 @@ class MnistDataloader(object):
         x_test, y_test = self.read_images_labels(self.test_images_filepath, self.test_labels_filepath)
         return (x_train, y_train), (x_test, y_test)
 
+
 '''
-    Redo input preprocessing with HOG or SIFT
+    Redo input preprocessing with HOG or SIFT later once NN is working
 '''

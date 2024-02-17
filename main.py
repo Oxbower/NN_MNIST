@@ -1,21 +1,14 @@
-# file for input, handle processing in another python file
-import matplotlib
-import numpy as np
-
-from preprocess_input import join, MnistDataloader
-from neural_net import NN
-
-'''
+"""
     Attributions:
     MNIST data loader from https://www.kaggle.com/code/hojjatk/read-mnist-dataset/notebook
-'''
-
-
-#
-# Verify Reading Dataset via MnistDataloader class
-#
+"""
+import matplotlib
+import numpy as np
+from preprocess_input import join, MnistDataloader
+from neural_net import NN
 import random
 import matplotlib.pyplot as plt
+
 
 #
 # Helper function to show a list of images with their relating titles
@@ -36,6 +29,7 @@ def show_images(images, title_texts):
     plt.ioff()
     plt.show()
 
+
 #
 # Show some random training and test images
 #
@@ -54,7 +48,9 @@ def display_input(x_train, y_train, x_test, y_test):
 
     show_images(images_2_show, titles_2_show)
 
+
 def main():
+    # Paths :(
     input_path = input("Path to MNIST archive folder:\t")
     training_images_filepath = join(input_path, 'train-images-idx3-ubyte\\train-images-idx3-ubyte')
     training_labels_filepath = join(input_path, 'train-labels-idx1-ubyte\\train-labels-idx1-ubyte')

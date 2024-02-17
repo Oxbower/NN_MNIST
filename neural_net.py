@@ -3,31 +3,43 @@
 import numpy as np
 
 
-def sigmoid_f():
-    return 1 / (1 + np.exp())
+'''
+    Activation for next layer of neural net
+'''
+def sigmoid_f(z):
+    return 1 / (1 + np.e * np.exp(-z))
 
 
-def sigmoid_d():
+def cost_f():
     pass
 
 
-def tanh_f():
-    return np.tanh()
+# Cross-entropy loss
+def loss_f(y, t):
+    return -t * np.log2(y) - (1 - t) * np.log2(1 - y)
 
 
-def cost():
-    pass
-
-def loss():
-    pass
-
-
-def gradient():
+'''
+    Compute gradient using loss func
+'''
+def gradient_f():
     pass
 
 
-# neural net call func
-def NN(X, t, epoch, lr, n_hidden, n_output):
+'''
+    Cluster data into batches, avoid chocking ram
+'''
+def mini_batch(data, batch_size):
+    return data
+
+
+'''
+    Neural Net:
+        - Make sure t is in single row form
+'''
+def NN(X, t, epoch, lr, batch_size, n_hidden, n_output):
+
+    batch = mini_batch(X, batch_size)
+
     for _ in epoch:
         pass
-    return cost_list, y, theta
